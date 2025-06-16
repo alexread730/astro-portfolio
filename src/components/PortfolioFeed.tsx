@@ -1,12 +1,34 @@
-import React, { useState } from 'react';
-import { Card, CardContent, CardHeader } from './ui/card';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { useEffect } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import { projects } from '@/data/portfolioData'; // Importing the projects data
+import React, { useState } from "react";
+import { Card, CardContent, CardHeader } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+import {
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { projects } from "@/data/portfolioData"; // Importing the projects data
+
+interface Project {
+  id: string | number;
+  title: string;
+  images: string[];
+  summary: string;
+  tags: string[];
+  details: {
+    challenge: string;
+    solution: string;
+    impact: string[];
+  };
+  externalLink?: {
+    url: string;
+    title: string;
+  };
+}
 
 const ProjectCarousel = ({ images }: { images: string[] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
@@ -16,7 +38,7 @@ const ProjectCarousel = ({ images }: { images: string[] }) => {
 
   useEffect(() => {
     if (emblaApi) {
-      emblaApi.on('select', () => {
+      emblaApi.on("select", () => {
         setSelectedIndex(emblaApi.selectedScrollSnap());
         setCanScrollPrev(emblaApi.canScrollPrev());
         setCanScrollNext(emblaApi.canScrollNext());
@@ -112,7 +134,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
         <div className="space-y-4">
           <p className="text-muted-foreground">{project.summary}</p>
-          
+
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <Badge key={tag} variant="secondary">
@@ -123,20 +145,24 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
           <div
             className={`space-y-4 overflow-hidden transition-all duration-500 ease-in-out ${
-              isExpanded ? 'max-h-[1000px]' : 'max-h-0'
+              isExpanded ? "max-h-[1000px]" : "max-h-0"
             }`}
           >
             <div className="rounded-lg bg-muted/50 p-4 space-y-4">
               <div>
                 <h4 className="font-semibold mb-2">Challenge</h4>
-                <p className="text-muted-foreground">{project.details.challenge}</p>
+                <p className="text-muted-foreground">
+                  {project.details.challenge}
+                </p>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Solution</h4>
-                <p className="text-muted-foreground">{project.details.solution}</p>
+                <p className="text-muted-foreground">
+                  {project.details.solution}
+                </p>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Impact</h4>
                 <ul className="list-disc list-inside space-y-1 text-muted-foreground">
@@ -146,8 +172,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 </ul>
               </div>
               {project.externalLink && (
-                <Button variant="link" className="flex items-center gap-2 text-md" asChild>
-                  <a href={project.externalLink.url} target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="link"
+                  className="flex items-center gap-2 text-md"
+                  asChild
+                >
+                  <a
+                    href={project.externalLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {project.externalLink.title}
                   </a>
                 </Button>
@@ -183,7 +217,7 @@ const PortfolioFeed = () => {
         <h2 className="mb-12 text-center text-4xl font-bold tracking-tight">
           Side Projects
         </h2>
-        
+
         <div className="space-y-8">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />

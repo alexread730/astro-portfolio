@@ -7,29 +7,36 @@ export type Job = {
 
 export const jobs: Job[] = [
   {
-    title: "Data Analyst",
-    company: "Tech Solutions Inc.",
-    dates: "01/2019 - 12/2022",
+    title: "Software Engineer",
+    company: "AdCellerant",
+    dates: "02/2022 - Present",
     description: [
-      "Developed interactive Power BI dashboards to analyze business performance and customer trends.",
-      "Automated ETL processes using Python and SQL to improve data processing efficiency by 40%.",
-      "Collaborated with stakeholders to identify key performance metrics and optimize reporting strategies.",
-      "Designed predictive models to forecast revenue and customer churn, providing actionable insights.",
-      "Managed data extraction from multiple sources, including APIs, databases, and cloud storage.",
-      "Presented analytical findings to executive teams, leading to data-driven decision-making."
-    ]
+      "Brought clarity and efficiency to a fast-moving sales workflow by engineering new features and squashing bugs across a React/GraphQL/NodeJS stack.",
+      "Contributed to over 17 repositories behind AdCellerant’s sales platform — building tools that are functional and design conscious",
+      "Built the PowerPoint Proposal Service from scratch — a dynamic system that transforms raw data into custom-branded decks, complete with composite static maps via the Mapbox API.",
+      "Developed the Line Item History Log, enabling account managers to track and review every change in granular detail.",
+      "Collaborated in a cross-functional team of up to 10 engineers, shipping clean code, following best practices, and pushing weekly releases to production.",
+    ],
   },
   {
     title: "Software Engineer",
-    company: "Innovatech Solutions",
-    dates: "03/2023 - Present",
+    company: "Intrinio",
+    dates: "10/2017 - 02/2022",
     description: [
-      "Developed full-stack web applications using React, Node.js, and MongoDB.",
-      "Implemented RESTful APIs and integrated third-party services for enhanced application functionality.",
-      "Optimized SQL queries and database schemas to improve system performance.",
-      "Led a team of junior developers, mentoring them on best practices in software engineering.",
-      "Designed and implemented CI/CD pipelines, reducing deployment time by 50%.",
-      "Collaborated with UX/UI designers to enhance the user experience of web applications."
-    ]
-  }
+      "Designed and implemented UI, features, and APIs across a data marketplace serving financial professionals.",
+      "Engineered SDKs in six languages to interface with proprietary APIs handling hundreds of thousands of daily requests.",
+      "Served as the go-between for engineering, marketing, and sales, translating client requirements into scalable technical specs.",
+      "Balanced frontend precision with backend resilience in a fast-paced, fully remote environment.",
+    ],
+  },
+  {
+    title: "Head of Customer Experience",
+    company: "Solé Bicycles",
+    dates: "09/2015 - 12/2016",
+    description: [
+      "Oversaw all customer touchpoints — including support channels, returns, repairs, and logistics.",
+      "Contributed to product design, branding, and feedback integration across multiple departments.",
+      "Managed POS and warehousing systems to track and update inventory",
+    ],
+  },
 ];
