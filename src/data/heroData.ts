@@ -3,7 +3,6 @@ export const heroData = {
   title: "Sofware Engineer",
   description:
     "Hi I am Alex Read. I am a Software Engineer and Web Developer focused on front-end development and creating a smooth user experience.",
-  profilePicture: "",
   skills: [
     "JavaScript",
     "TypeScript",
